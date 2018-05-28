@@ -1,0 +1,9 @@
+.el-container {
+  margin-top: 100px;
+}
+
+.el-carousel--card {
+  margin: 0 auto;
+  width: 100%;
+  min-width: 800px;
+}
