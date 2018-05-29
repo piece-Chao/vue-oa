@@ -1,8 +1,24 @@
 <template>
   <div class="Home">
     <div class="top">
-      <span>企业LOGO</span>
-      <span>用户</span>
+      <span class="logo">企业LOGO</span>
+      <el-row class="block-col-2">
+        <el-badge :value="1" :max="99" class="el_badge">
+          <i class="el-icon-bell"></i>
+        </el-badge>
+        <el-col :span="12">
+          <el-dropdown trigger="click" @command="handleCommand">
+        <span class="el-dropdown-link">
+          <img src="/static/images/portrait.jpg" alt="头像">
+          <i>mankiodefinite</i>
+        </span>
+            <el-dropdown-menu slot="dropdown">
+              <el-dropdown-item command="exit">退出</el-dropdown-item>
+              <el-dropdown-item>版本1.0.0</el-dropdown-item>
+            </el-dropdown-menu>
+          </el-dropdown>
+        </el-col>
+      </el-row>
     </div>
     <el-container>
       <el-aside>
@@ -55,12 +71,18 @@
 </template>
 
 <script>
+import router from '../router/index'
 export default {
   name: 'Home',
   data () {
     return {}
   },
   methods: {
+    handleCommand (command) {
+      if (command === 'exit') {
+        router.push({ name: 'Login' })
+      }
+    }
   }
 }
 </script>
@@ -68,7 +90,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="less" scoped>
   @GlobalColor: #67b0ff;
-  
+
   .Home {
     height: 100%;
     width: 100%;
@@ -81,18 +103,11 @@ export default {
       left: 0;
       z-index: 999;
       line-height: 80px;
-      span:nth-of-type(1) {
+      .logo {
         color: #fff;
         font-size: 28px;
         float: left;
         padding-left: 30px;
-        cursor: pointer;
-      }
-      span:nth-of-type(2) {
-        color: #fff;
-        font-size: 28px;
-        float: right;
-        padding-right: 30px;
         cursor: pointer;
       }
     }
@@ -108,7 +123,7 @@ export default {
       }
     }
   }
-  
+
   .el-header {
     background-color: #B3C0D1;
     color: #333;
@@ -126,5 +141,36 @@ export default {
     opacity: 0.75;
     line-height: 200px;
     margin: 0;
+  }
+
+  .el_badge {
+    right: 200px;
+    top: 6px;
+    .el-icon-bell {
+      float: right;
+      color: #ffffff;
+      font-size: 20px;
+    }
+  }
+  .block-col-2 {
+    padding-right: 10px;
+    float: right;
+    font-size: 16px;
+    .el-dropdown-link {
+      display: flex;
+    }
+    img {
+      flex: 1;
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+      margin-top: 20px;
+    }
+    i {
+      flex: 1;
+      font-size: 20px;
+      color: #ffffff;
+      margin-left: 10px;
+    }
   }
 </style>

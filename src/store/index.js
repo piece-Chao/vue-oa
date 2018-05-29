@@ -6,6 +6,7 @@ import * as actions from './actions'
 import Banner from './modules/Banner'
 import Table from './modules/Table'
 import Chars from './modules/Chars'
+import Login from './modules/Login'
 
 Vue.use(Vuex)
 
@@ -19,7 +20,8 @@ export default new Vuex.Store({
   modules: {
     Banner,
     Table,
-    Chars
+    Chars,
+    Login
   },
   plugins: process.env.NODE_ENV !== 'production' ? [logger] : []
 })

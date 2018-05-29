@@ -9,8 +9,6 @@ Random.county()
 Random.zip()
 Random.cword(4)
 
-console.log(Mock)
-
 Mock.mock('http://mc.data/api-dev/banner', {
   code: 200,
   msg: 'success',
@@ -125,4 +123,10 @@ Mock.mock('http://mc.data/api-dev/chars', {
       ]
     }
   }
+})
+
+Mock.mock('http://mc.data/api-dev/login', {
+  code: 200,
+  msg: 'success',
+  data: {}
 })

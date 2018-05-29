@@ -4,6 +4,7 @@ import Home from '@/components/Home'
 import Banner from '@/components/Banner'
 import Table from '@/components/Table'
 import Chars from '@/components/Chars'
+import Login from '@/components/Login'
 
 Vue.use(Router)
 
@@ -11,8 +12,14 @@ export default new Router({
   routes: [
     {
       path: '/',
+      name: 'Login',
+      component: Login
+    },
+    {
+      path: '/Home',
       name: 'Home',
       component: Home,
+      redirect: '/Banner',
       children: [
         {
           path: '/Banner',

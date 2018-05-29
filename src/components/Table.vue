@@ -45,26 +45,26 @@
       </el-table-column>
     </el-table>
   </template>
- <script>
-   import { mapState, mapActions } from 'vuex'
-   
-   export default {
-     name: 'Table',
-     data() {
-       return {}
-     },
-     computed: {
-       ...mapState({
-         tableItem: state => state.Table.tableData
-       })
-     },
-     methods: {
-       ...mapActions([
-         'getTableData'
-       ])
-     },
-     created() {
-       this.getTableData()
-     }
-   }
- </script>
+<script>
+import { mapState, mapActions } from 'vuex'
+
+export default {
+  name: 'Table',
+  data () {
+    return {}
+  },
+  computed: {
+    ...mapState({
+      tableItem: state => state.Table.tableData
+    })
+  },
+  methods: {
+    ...mapActions([
+      'getTableData'
+    ])
+  },
+  created () {
+    this.getTableData()
+  }
+}
+</script>

@@ -1,5 +1,6 @@
 import { Loading } from 'element-ui'
 import Vue from 'vue'
+let vue = new Vue()
 
 export default {
   request ({
@@ -9,7 +10,7 @@ export default {
     onSuccess: successCb = res => {},
     onErr: errCb = err => {
       console.log(err)
-      new Vue().$message({
+      vue.$message({
         message: '请求失败'
       })
     },
@@ -19,25 +20,24 @@ export default {
       b: param,
       c: {}
     }
-    let vue = new Vue()
     console.log('Request URL:' + api, param)
-    let load = Loading.service({text: '正在获取数据' })
+    let load = Loading.service({ text: '正在获取数据' })
     vue.$http(api, methods, JSON.stringify(params)).then(res => {
-        console.log('Response URL: ' + api, res.data)
-        let { data, msg, code } = res.data
-        if (msg) {
-          successCb(data)
-        } else {
-          if (code in errCodes) {
-            let msg = '请求失败'
-            msg = errCodes[code]
-            vue.$message({
-              message: msg
-            })
-          }
+      console.log('Response URL: ' + api, res.data)
+      let { data, msg, code } = res.data
+      if (msg) {
+        successCb(data)
+      } else {
+        if (code in errCodes) {
+          let msg = '请求失败'
+          msg = errCodes[code]
+          vue.$message({
+            message: msg
+          })
         }
-        load.close()
-      },
+      }
+      load.close()
+    },
     err => {
       load.close()
       errCb(err)
