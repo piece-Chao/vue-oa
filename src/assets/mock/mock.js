@@ -8,6 +8,7 @@ Random.city()
 Random.county()
 Random.zip()
 Random.cword(4)
+Random.ctitle()
 
 Mock.mock('http://mc.data/api-dev/banner', {
   code: 200,
@@ -129,4 +130,73 @@ Mock.mock('http://mc.data/api-dev/login', {
   code: 200,
   msg: 'success',
   data: {}
+})
+
+Mock.mock('http://mc.data/api-dev/waterfall', {
+  code: 200,
+  msg: 'success',
+  data: {
+    waterData: [
+      {
+        src: '/static/images/OA_person1.jpg',
+        name: '@cname',
+        title: '@ctitle'
+      },
+      {
+        src: '/static/images/OA_person2.png',
+        name: '@cname',
+        title: '@ctitle'
+      },
+      {
+        src: '/static/images/OA_person3.jpg',
+        name: '@cname',
+        title: '@ctitle'
+      },
+      {
+        src: '/static/images/OA_person4.jpg',
+        name: '@cname',
+        title: '@ctitle'
+      },
+      {
+        src: '/static/images/OA_person5.png',
+        name: '@cname',
+        title: '@ctitle'
+      },
+      {
+        src: '/static/images/OA_person6.jpeg',
+        name: '@cname',
+        title: '@ctitle'
+      },
+      {
+        src: '/static/images/OA_person7.png',
+        name: '@cname',
+        title: '@ctitle'
+      },
+      {
+        src: '/static/images/OA_person8.jpg',
+        name: '@cname',
+        title: '@ctitle'
+      },
+      {
+        src: '/static/images/OA_person9.jpg',
+        name: '@cname',
+        title: '@ctitle'
+      },
+      {
+        src: '/static/images/OA_person10.jpeg',
+        name: '@cname',
+        title: '@ctitle'
+      },
+      {
+        src: '/static/images/OA_person11.jpeg',
+        name: '@cname',
+        title: '@ctitle'
+      },
+      {
+        src: '/static/images/OA_person12.jpg',
+        name: '@cname',
+        title: '@ctitle'
+      }
+    ]
+  }
 })

@@ -1,6 +1,6 @@
 <template>
   <el-container active-text-color="#ffd04b" class="content_container">
-    <el-carousel type="card" :interval="4000">
+    <el-carousel trigger="click" type="card" :interval="4000">
       <el-carousel-item v-for="item in ImgItem" :key="item.title">
         <img :src="item.src" :alt="item.title">
         <p>{{item.desc}}</p>

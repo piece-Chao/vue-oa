@@ -7,6 +7,7 @@ import Banner from './modules/Banner'
 import Table from './modules/Table'
 import Chars from './modules/Chars'
 import Login from './modules/Login'
+import WaterFall from './modules/WaterFall'
 
 Vue.use(Vuex)
 
@@ -21,7 +22,8 @@ export default new Vuex.Store({
     Banner,
     Table,
     Chars,
-    Login
+    Login,
+    WaterFall
   },
   plugins: process.env.NODE_ENV !== 'production' ? [logger] : []
 })

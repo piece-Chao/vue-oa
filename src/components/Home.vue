@@ -27,22 +27,12 @@
             <template slot="title"><i class="el-icon-message"></i>导航一</template>
               <router-link to="/Banner"><el-menu-item index="1-1">轮播图</el-menu-item></router-link>
               <router-link to="/Table"><el-menu-item index="1-2">表格</el-menu-item></router-link>
-            <router-link to="/Chars"><el-menu-item index="1-3">图表</el-menu-item></router-link>
+              <router-link to="/Chars"><el-menu-item index="1-3">图表</el-menu-item></router-link>
           </el-submenu>
           <el-submenu index="2">
             <template slot="title"><i class="el-icon-menu"></i>导航二</template>
-            <el-menu-item-group>
-              <template slot="title">分组一</template>
-              <el-menu-item index="2-1">选项1</el-menu-item>
+              <router-link to="/Waterfall"><el-menu-item index="2-1">图片瀑布流</el-menu-item></router-link>
               <el-menu-item index="2-2">选项2</el-menu-item>
-            </el-menu-item-group>
-            <el-menu-item-group title="分组2">
-              <el-menu-item index="2-3">选项3</el-menu-item>
-            </el-menu-item-group>
-            <el-submenu index="2-4">
-              <template slot="title">选项4</template>
-              <el-menu-item index="2-4-1">选项4-1</el-menu-item>
-            </el-submenu>
           </el-submenu>
           <el-submenu index="3">
             <template slot="title"><i class="el-icon-setting"></i>导航三</template>

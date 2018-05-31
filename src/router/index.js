@@ -5,6 +5,7 @@ import Banner from '@/components/Banner'
 import Table from '@/components/Table'
 import Chars from '@/components/Chars'
 import Login from '@/components/Login'
+import Waterfall from '@/components/Waterfall'
 
 Vue.use(Router)
 
@@ -35,6 +36,11 @@ export default new Router({
           path: '/Chars',
           name: 'Chars',
           component: Chars
+        },
+        {
+          path: '/Waterfall',
+          name: 'Waterfall',
+          component: Waterfall
         }
       ]
     }
