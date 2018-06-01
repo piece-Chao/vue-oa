@@ -2,6 +2,9 @@
   <div class="Home">
     <div class="top">
       <span class="logo">企业LOGO</span>
+      <el-breadcrumb class="home_Breadcrumb" separator-class="el-icon-arrow-right">
+        <el-breadcrumb-item v-for="(item, index) in breadcrumbList" :key="index" :to="{ path: item.path }">{{item.name}}</el-breadcrumb-item>
+      </el-breadcrumb>
       <el-row class="block-col-2">
         <el-badge :value="1" :max="99" class="el_badge">
           <i class="el-icon-bell"></i>
@@ -22,7 +25,7 @@
     </div>
     <el-container>
       <el-aside>
-        <el-menu text-color="#333" active-text-color="#58a8f5" :default-openeds="['1']">
+        <el-menu text-color="#333" active-text-color="#58a8f5" :default-openeds="['1', '2', '3']">
           <el-submenu index="1">
             <template slot="title"><i class="el-icon-message"></i>导航一</template>
               <router-link to="/Banner"><el-menu-item index="1-1">轮播图</el-menu-item></router-link>
@@ -62,15 +65,35 @@
 
 <script>
 import router from '../router/index'
+import Global from '../utils/Global'
 export default {
   name: 'Home',
   data () {
-    return {}
+    return {
+      breadcrumbList: [
+        {
+          path: '/Home',
+          name: '首页'
+        }
+      ]
+    }
+  },
+  watch: {
+    $route() {
+       let item = this.$route.matched[1]
+      console.log(item)
+       this.toPath({path: item.path, name: Global.router.get(item.name)})
+    }
   },
   methods: {
     handleCommand (command) {
       if (command === 'exit') {
         router.push({ name: 'Login' })
+      }
+    },
+    toPath (item) {
+      if(item) {
+        this.breadcrumbList.splice(1, 1, item)
       }
     }
   }
@@ -93,6 +116,12 @@ export default {
       left: 0;
       z-index: 999;
       line-height: 80px;
+      .home_Breadcrumb {
+        float: left;
+        line-height: 20px;
+        margin: 28px 0 0 150px;
+        
+      }
       .logo {
         color: #fff;
         font-size: 28px;

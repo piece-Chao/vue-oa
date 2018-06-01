@@ -24,3 +24,23 @@
   margin-top: -100px;
   font-size: 16px;
 }
+
+.el-breadcrumb__inner.is-link {
+  color: #ffffff;
+  font-size: 16px;
+}
+
+.Home .el-breadcrumb__item .el-breadcrumb__inner {
+  color: #ffffff;
+  font-size: 16px;
+}
+
+.Home .el-breadcrumb__item .el-breadcrumb__inner:hover {
+  color: #ffffff;
+}
+
+.Home .el-breadcrumb__separator.el-icon-arrow-right {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+}
