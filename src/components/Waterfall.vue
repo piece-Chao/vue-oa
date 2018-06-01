@@ -41,7 +41,7 @@
     created() {
       this.reqImagesDate()
       window.onscroll = () => {
-        if ((document.body.scrollHeight - document.documentElement.clientHeight) < (document.documentElement.scrollTop - 80)) {
+        if ((document.body.scrollHeight - document.documentElement.clientHeight) < (document.documentElement.scrollTop - 70)) {
             this.reqImagesDate()
             return
         }

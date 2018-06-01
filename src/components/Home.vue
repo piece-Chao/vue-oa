@@ -35,7 +35,7 @@
           <el-submenu index="2">
             <template slot="title"><i class="el-icon-menu"></i>导航二</template>
               <router-link to="/Waterfall"><el-menu-item index="2-1">图片瀑布流</el-menu-item></router-link>
-              <el-menu-item index="2-2">选项2</el-menu-item>
+              <router-link to="/Waterfall"><el-menu-item index="2-2">记事本</el-menu-item></router-link>
           </el-submenu>
           <el-submenu index="3">
             <template slot="title"><i class="el-icon-setting"></i>导航三</template>
