@@ -42,6 +42,7 @@ export default {
   .home_chars {
     height: 500px;
     width: 100%;
+    margin-top: 20px;
     .changeTypes {
       margin-bottom: 50px;
       cursor: pointer;
