@@ -1,5 +1,5 @@
 <template>
-  <div class="waterfall">
+  <div class="waterfall" ref="waterfall" @scroll="_scroll">
     <el-row>
       <el-col class="water_col" :span="4" v-for="(item, index) in waterList" :key="index">
         <el-card :body-style="{ padding: '10px', height: '100%', width: '100%', boxSizing: 'border-box' }" shadow="hover">
@@ -35,17 +35,17 @@
         'clearWaterFallData'
       ]),
       backTop () {
-        document.body.scrollTop = document.documentElement.scrollTop = 0
+        this.$refs.waterfall.scrollTop = 0
+      },
+      _scroll () {
+        if ((event.currentTarget.scrollHeight - event.currentTarget.clientHeight) === (event.currentTarget.scrollTop)) {
+          this.reqImagesDate()
+          return
+        }
       }
     },
     created() {
       this.reqImagesDate()
-      window.onscroll = () => {
-        if ((document.body.scrollHeight - document.documentElement.clientHeight) < (document.documentElement.scrollTop - 70)) {
-            this.reqImagesDate()
-            return
-        }
-      }
     },
     beforeDestroy() {
       this.clearWaterFallData()
@@ -56,6 +56,8 @@
   .waterfall {
     height: 100%;
     width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
     .water_col {
       height: 400px;
       width: 300px;

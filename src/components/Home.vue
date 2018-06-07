@@ -23,8 +23,8 @@
         </el-col>
       </el-row>
     </div>
-    <el-container>
-      <el-aside>
+    <el-container style="height: 100%; padding: 0 0 80px 0; box-sizing: border-box">
+      <el-aside style="height: 100%; overflow-x: hidden; overflow-y: auto; border-right: 1px solid #e6e6e6;">
         <el-menu text-color="#333" active-text-color="#58a8f5" :default-openeds="['1', '2', '3']">
           <el-submenu index="1">
             <template slot="title"><i class="el-icon-message"></i>导航一</template>
@@ -35,7 +35,7 @@
           <el-submenu index="2">
             <template slot="title"><i class="el-icon-menu"></i>导航二</template>
               <router-link to="/Waterfall"><el-menu-item index="2-1">图片瀑布流</el-menu-item></router-link>
-              <router-link to="/Waterfall"><el-menu-item index="2-2">记事本</el-menu-item></router-link>
+              <router-link to="/Notepad"><el-menu-item index="2-2">记事本</el-menu-item></router-link>
           </el-submenu>
           <el-submenu index="3">
             <template slot="title"><i class="el-icon-setting"></i>导航三</template>
@@ -133,6 +133,8 @@ export default {
     .content_container {
       margin-top: 0;
       padding: 0 50px;
+      overflow-x: hidden;
+      overflow-y: auto;
       .el-main {
         padding-top: 0;
       }

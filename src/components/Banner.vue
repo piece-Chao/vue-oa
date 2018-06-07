@@ -88,6 +88,7 @@ export default {
     height: 100%;
     width: 100%;
     .content_container {
+      height: 350px;
       .el-main {
         padding-top: 0;
       }

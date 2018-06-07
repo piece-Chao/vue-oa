@@ -6,6 +6,7 @@ import Table from '@/components/Table'
 import Chars from '@/components/Chars'
 import Login from '@/components/Login'
 import Waterfall from '@/components/Waterfall'
+import Notepad from '@/components/Notepad'
 
 Vue.use(Router)
 
@@ -41,6 +42,11 @@ export default new Router({
           path: '/Waterfall',
           name: 'Waterfall',
           component: Waterfall
+        },
+        {
+          path: '/Notepad',
+          name: 'Notepad',
+          component: Notepad
         }
       ]
     }

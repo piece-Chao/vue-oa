@@ -44,3 +44,7 @@
   font-size: 16px;
   font-weight: 700;
 }
+
+.Home .el-menu {
+  border-right: 0;
+}
