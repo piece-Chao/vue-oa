@@ -200,3 +200,60 @@ Mock.mock('http://mc.data/api-dev/waterfall', {
     ]
   }
 })
+
+Mock.mock('http://mc.data/api-dev/notepad', {
+  code: 200,
+  msg: 'success',
+  data: {
+    notepadList: [
+      {
+        date: '@date',
+        name: '@cname',
+        desc: '@ctitle',
+        address: '@province@city@county',
+        isContenteditable: false,
+        isSpellcheck: false
+      },
+      {
+        date: '@date',
+        name: '@cname',
+        desc: '@ctitle',
+        address: '@province@city@county',
+        isContenteditable: false,
+        isSpellcheck: false
+      },
+      {
+        date: '@date',
+        name: '@cname',
+        desc: '@ctitle',
+        address: '@province@city@county',
+        isContenteditable: false,
+        isSpellcheck: false
+      },
+      {
+        date: '@date',
+        name: '@cname',
+        desc: '@ctitle',
+        address: '@province@city@county',
+        isContenteditable: false,
+        isSpellcheck: false
+      },
+      {
+        date: '@date',
+        name: '@cname',
+        desc: '@ctitle',
+        address: '@province@city@county',
+        isContenteditable: false,
+        isSpellcheck: false
+      },
+      {
+        date: '@date',
+        name: '@cname',
+        desc: '@ctitle',
+        address: '@province@city@county',
+        isContenteditable: false,
+        isSpellcheck: false
+      }
+    ]
+  }
+})
