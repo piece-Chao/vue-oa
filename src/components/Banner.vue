@@ -69,7 +69,7 @@ export default {
       }
     },
     sendEmail () {
-      window.location = "mailto: maitcast@163.com"
+      window.location = 'mailto: maitcast@163.com'
     },
     getUserMessage () {
       this.$alert(`当前的用户为${this.userName}`, '提示', {})
@@ -78,7 +78,7 @@ export default {
       window.open('https://github.com/')
     }
   },
-  created() {
+  created () {
     this.getImageData()
   }
 }
@@ -172,5 +172,5 @@ export default {
       }
     }
   }
-  
+
 </style>

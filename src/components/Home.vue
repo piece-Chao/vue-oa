@@ -70,19 +70,16 @@ export default {
   name: 'Home',
   data () {
     return {
-      breadcrumbList: [
-        {
-          path: '/Home',
-          name: '首页'
-        }
-      ]
+      breadcrumbList: [{
+        path: '/Home',
+        name: '首页'
+      }]
     }
   },
   watch: {
-    $route() {
-       let item = this.$route.matched[1]
-      console.log(item)
-       this.toPath({path: item.path, name: Global.router.get(item.name)})
+    $route () {
+      let item = this.$route.matched[1]
+      this.toPath({path: item.path, name: Global.router.get(item.name)})
     }
   },
   methods: {
@@ -92,9 +89,18 @@ export default {
       }
     },
     toPath (item) {
-      if(item) {
+      if (item) {
         this.breadcrumbList.splice(1, 1, item)
       }
+    }
+  },
+  created () {
+    let pathname = window.location.hash
+    if (pathname !== '#/Home') {
+      this.breadcrumbList.push({
+        path: pathname.split('/')[1],
+        name: Global.router.get(pathname.split('/')[1])
+      })
     }
   }
 }
@@ -120,7 +126,7 @@ export default {
         float: left;
         line-height: 20px;
         margin: 28px 0 0 150px;
-        
+
       }
       .logo {
         color: #fff;

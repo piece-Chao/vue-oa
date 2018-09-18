@@ -43,7 +43,7 @@ export default {
       this.user_login({userName: this.userName, pwd: this.pwd})
     },
     initAniCanvas () {
-      particleground (this.$el.querySelector('.login_backGround'), {
+      window.particleground(this.$el.querySelector('.login_backGround'), {
         dotColor: '#0e7085',
         lineColor: '#0e7085',
         parallaxMultiplier: 100,

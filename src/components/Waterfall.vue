@@ -17,40 +17,40 @@
   </div>
 </template>
 <script>
-  import { mapState, mapActions, mapMutations } from 'vuex'
-  export default {
-    data () {
-      return {}
+import { mapState, mapActions, mapMutations } from 'vuex'
+export default {
+  data () {
+    return {}
+  },
+  computed: {
+    ...mapState({
+      waterList: state => state.WaterFall.imagesList
+    })
+  },
+  methods: {
+    ...mapActions([
+      'reqImagesDate'
+    ]),
+    ...mapMutations([
+      'clearWaterFallData'
+    ]),
+    backTop () {
+      this.$refs.waterfall.scrollTop = 0
     },
-    computed: {
-      ...mapState({
-        waterList: state => state.WaterFall.imagesList
-      })
-    },
-    methods: {
-      ...mapActions([
-        'reqImagesDate'
-      ]),
-      ...mapMutations([
-        'clearWaterFallData'
-      ]),
-      backTop () {
-        this.$refs.waterfall.scrollTop = 0
-      },
-      _scroll () {
-        if ((event.currentTarget.scrollHeight - event.currentTarget.clientHeight) === (event.currentTarget.scrollTop)) {
-          this.reqImagesDate()
-          return
-        }
+    _scroll () {
+      if ((event.currentTarget.scrollHeight - event.currentTarget.clientHeight) === (event.currentTarget.scrollTop)) {
+        this.reqImagesDate()
+        return false
       }
-    },
-    created() {
-      this.reqImagesDate()
-    },
-    beforeDestroy() {
-      this.clearWaterFallData()
     }
+  },
+  created () {
+    this.reqImagesDate()
+  },
+  beforeDestroy () {
+    this.clearWaterFallData()
   }
+}
 </script>
 <style lang="less" scoped>
   .waterfall {

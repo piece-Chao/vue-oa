@@ -20,7 +20,7 @@ const actions = {
     api.request({
       methods: 'GET',
       api: 'http://mc.data/api-dev/waterfall',
-      onSuccess:(res) => {
+      onSuccess: (res) => {
         commit('getWaterFallDate', res.waterData)
       }
     })

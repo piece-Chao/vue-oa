@@ -42,67 +42,67 @@
   </el-table>
 </template>
 <script>
-  import { mapMutations, mapActions, mapState } from 'vuex'
-  export default {
-    data () {
-      return {
-        tableData: [{
-          date: '2016-05-02',
-          name: '王小虎',
-          desc: 'asdasdasdassssssss',
-          address: '上海市普陀区金沙江路 1518 弄',
-          isContenteditable: false,
-          isSpellcheck: false
-        }, {
-          date: '2016-05-04',
-          name: '王小虎',
-          desc: 'asdasdasdassssssss',
-          address: '上海市普陀区金沙江路 1517 弄',
-          isContenteditable: false,
-          isSpellcheck: false
-        }, {
-          date: '2016-05-01',
-          name: '王小虎',
-          desc: 'asdasdasdassssssss',
-          address: '上海市普陀区金沙江路 1519 弄',
-          isContenteditable: false,
-          isSpellcheck: false
-        }, {
-          date: '2016-05-03',
-          name: '王小虎',
-          desc: 'asdasdasdassssssss',
-          address: '上海市普陀区金沙江路 1516 弄',
-          isContenteditable: false,
-          isSpellcheck: false
-        }]
-      }
-    },
-    computed: {
-      ...mapState({
-        notepadList: state => state.Notepad.notepadList
-      })
-    },
-    methods: {
-      ...mapMutations([
-        'deleteNotePadData'
-      ]),
-      ...mapActions([
-        'reqNotePadList'
-      ]),
-      handleEdit(index, row) {
-        row.isContenteditable = true
-        row.isSpellcheck = true
-      },
-      handleDelete(index, row) {
-        this.deleteNotePadData(index)
-      },
-      handleDone(index, row) {
-        row.isContenteditable = false
-        row.isSpellcheck = false
-      }
-    },
-    created() {
-      this.reqNotePadList()
+import { mapMutations, mapActions, mapState } from 'vuex'
+export default {
+  data () {
+    return {
+      tableData: [{
+        date: '2016-05-02',
+        name: '王小虎',
+        desc: 'asdasdasdassssssss',
+        address: '上海市普陀区金沙江路 1518 弄',
+        isContenteditable: false,
+        isSpellcheck: false
+      }, {
+        date: '2016-05-04',
+        name: '王小虎',
+        desc: 'asdasdasdassssssss',
+        address: '上海市普陀区金沙江路 1517 弄',
+        isContenteditable: false,
+        isSpellcheck: false
+      }, {
+        date: '2016-05-01',
+        name: '王小虎',
+        desc: 'asdasdasdassssssss',
+        address: '上海市普陀区金沙江路 1519 弄',
+        isContenteditable: false,
+        isSpellcheck: false
+      }, {
+        date: '2016-05-03',
+        name: '王小虎',
+        desc: 'asdasdasdassssssss',
+        address: '上海市普陀区金沙江路 1516 弄',
+        isContenteditable: false,
+        isSpellcheck: false
+      }]
     }
+  },
+  computed: {
+    ...mapState({
+      notepadList: state => state.Notepad.notepadList
+    })
+  },
+  methods: {
+    ...mapMutations([
+      'deleteNotePadData'
+    ]),
+    ...mapActions([
+      'reqNotePadList'
+    ]),
+    handleEdit (index, row) {
+      row.isContenteditable = true
+      row.isSpellcheck = true
+    },
+    handleDelete (index, row) {
+      this.deleteNotePadData(index)
+    },
+    handleDone (index, row) {
+      row.isContenteditable = false
+      row.isSpellcheck = false
+    }
+  },
+  created () {
+    this.reqNotePadList()
   }
+}
 </script>

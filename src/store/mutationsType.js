@@ -1,5 +1,5 @@
 // Banner
-export const BANNER_DATA = 'bannerData';
+export const BANNER_DATA = 'bannerData'
 
 // Table
 export const TABLE_DATA = 'tableData'

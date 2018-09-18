@@ -9,7 +9,7 @@ const state = {
 
 const actions = {
   user_login: (context, payload) => {
-    if ((payload.userName !== context.state.userName) || (payload.pwd !==context.state.pwd)) {
+    if ((payload.userName !== context.state.userName) || (payload.pwd !== context.state.pwd)) {
       self.$message({
         message: '请输入正确的账号或密码'
       })
