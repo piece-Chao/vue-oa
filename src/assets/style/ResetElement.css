@@ -48,3 +48,22 @@
 .Home .el-menu {
   border-right: 0;
 }
+
+.el-icon-document {
+  display: none;
+}
+
+.my-gallery {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.my-gallery figure {
+  margin: 5px;
+}
+
+.my-gallery img {
+  width: 200px;
+  height: 200px;
+  margin: 10px;
+}

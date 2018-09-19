@@ -10,11 +10,16 @@ import axios from 'axios'
 import store from './store'
 import './assets/mock/mock'
 import VCharts from 'v-charts'
+import VuePreview from 'vue-preview'
 
 Vue.prototype.$http = axios
 Vue.use(ElementUI)
 Vue.use(Vuex)
 Vue.use(VCharts)
+Vue.use(VuePreview, {
+  fullscreenEl: false,
+  shareEl: false
+})
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

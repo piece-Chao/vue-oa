@@ -14,3 +14,7 @@ export const CLEAR_WATER_FALL_DATA = 'clearWaterFallData'
 // notepad
 export const GET_NOTE_PAD_DATA = 'getNotePadData'
 export const DELETE_NOTE_PAD_DATA = 'deleteNotePadData'
+
+// upload
+export const CHANGE_FILELIST = 'changeFileList'
+export const SUBMIT_UPLOAD = 'submitUpload'

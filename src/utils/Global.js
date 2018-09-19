@@ -5,7 +5,8 @@ Global.router = new Map([
   ['Table', '表格'],
   ['Chars', '图表'],
   ['Waterfall', '图片瀑布流'],
-  ['Notepad', '记事本']
+  ['Notepad', '记事本'],
+  ['Upload', '文件上传预览']
 ])
 
 export default Global

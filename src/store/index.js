@@ -9,6 +9,7 @@ import Chars from './modules/Chars'
 import Login from './modules/Login'
 import WaterFall from './modules/WaterFall'
 import Notepad from './modules/Notepad'
+import Upload from './modules/Upload'
 
 Vue.use(Vuex)
 
@@ -25,7 +26,8 @@ export default new Vuex.Store({
     Chars,
     Login,
     WaterFall,
-    Notepad
+    Notepad,
+    Upload
   },
   plugins: process.env.NODE_ENV !== 'production' ? [logger] : []
 })

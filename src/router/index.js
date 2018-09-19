@@ -7,6 +7,7 @@ import Chars from '@/components/Chars'
 import Login from '@/components/Login'
 import Waterfall from '@/components/Waterfall'
 import Notepad from '@/components/Notepad'
+import Upload from '@/components/Upload'
 
 Vue.use(Router)
 
@@ -47,6 +48,11 @@ export default new Router({
           path: '/Notepad',
           name: 'Notepad',
           component: Notepad
+        },
+        {
+          path: '/Upload',
+          name: 'Upload',
+          component: Upload
         }
       ]
     }
