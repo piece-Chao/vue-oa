@@ -8,6 +8,7 @@ import Login from '@/components/Login'
 import Waterfall from '@/components/Waterfall'
 import Notepad from '@/components/Notepad'
 import Upload from '@/components/Upload'
+import UserSetUp from '@/components/UserSetUp'
 
 Vue.use(Router)
 
@@ -53,6 +54,11 @@ export default new Router({
           path: '/Upload',
           name: 'Upload',
           component: Upload
+        },
+        {
+          path: '/UserSetUp',
+          name: 'UserSetUp',
+          component: UserSetUp
         }
       ]
     }

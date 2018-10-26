@@ -17,7 +17,8 @@
         </span>
             <el-dropdown-menu slot="dropdown">
               <el-dropdown-item command="exit">退出</el-dropdown-item>
-              <el-dropdown-item>版本1.0.0</el-dropdown-item>
+              <router-link to='/UserSetUp'><el-dropdown-item>个人中心</el-dropdown-item></router-link>
+              <el-dropdown-item>版本{{packageJson.version}}</el-dropdown-item>
             </el-dropdown-menu>
           </el-dropdown>
         </el-col>
@@ -61,6 +62,7 @@
 <script>
 import router from '../router/index'
 import Global from '../utils/Global'
+import packageJson from '../../package'
 export default {
   name: 'Home',
   data () {
@@ -68,7 +70,8 @@ export default {
       breadcrumbList: [{
         path: '/Home',
         name: '首页'
-      }]
+      }],
+      packageJson
     }
   },
   watch: {

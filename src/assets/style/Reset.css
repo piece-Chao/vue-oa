@@ -57,6 +57,11 @@ a {
   vertical-align:baseline;
   background:transparent;
   text-decoration: none;
+  color: #606266;
+}
+
+a:hover {
+  color: #2ba0ff;
 }
 
 ins {
