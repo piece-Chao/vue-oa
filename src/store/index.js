@@ -10,6 +10,7 @@ import Login from './modules/Login'
 import WaterFall from './modules/WaterFall'
 import Notepad from './modules/Notepad'
 import Upload from './modules/Upload'
+import UserSetUp from './modules/UserSetUp'
 
 Vue.use(Vuex)
 
@@ -27,7 +28,8 @@ export default new Vuex.Store({
     Login,
     WaterFall,
     Notepad,
-    Upload
+    Upload,
+    UserSetUp
   },
   plugins: process.env.NODE_ENV !== 'production' ? [logger] : []
 })

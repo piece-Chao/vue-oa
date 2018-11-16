@@ -183,6 +183,7 @@ export default {
     font-size: 16px;
     .el-dropdown-link {
       display: flex;
+      cursor: pointer;
     }
     img {
       flex: 1;

@@ -4,59 +4,85 @@
         <section class="nav">
           <span>账户信息</span>
         </section>
-        <section>
-          <div>
-            <span>姓名：</span>
-            <el-input
-              class="input"
-              placeholder="请输入内容"
-              type="text" />
-          </div>
-          <div>
-            <span>性别：</span>
-            <el-input
-              class="input"
-              placeholder="请输入内容"
-              type="text" />
-          </div>
-          <div>
-            <span>出生日期：</span>
-            <el-input
-              class="input"
-              placeholder="请输入内容"
-              type="text" />
-          </div>
-          <div>
-            <span>工龄：</span>
-            <el-input
-              class="input"
-              placeholder="请输入内容"
-              type="text" />
-          </div>
-          <div>
-            <span>工号：</span>
-            <el-input
-              class="input"
-              placeholder="请输入内容"
-              type="text" />
-          </div>
-          <div>
-            <span>所属部门：</span>
-            <el-input
-              class="input"
-              placeholder="请输入内容"
-              type="text" />
+        <section class="content">
+          <TitleAndInput title="姓名：" :value="dataItem.name" :disabled="dataItem.name ? true : false" placeholder="请输入内容" type="text" :onInput="_onInputName" />
+          <TitleAndInput title="性别：" :value="dataItem.sex" :disabled="dataItem.sex ? true : false" placeholder="请输入内容" type="text" :onInput="_onInputSex" />
+          <TitleAndInput title="出生日期：" :value="dataItem.date" :disabled="dataItem.date ? true : false" placeholder="请输入内容" type="text" :onInput="_onInputDate" />
+          <TitleAndInput title="年龄：" :value="dataItem.age" :disabled="dataItem.age ? true : false" placeholder="请输入内容" type="text" :onInput="_onInputAge" />
+          <TitleAndInput title="工号：" :value="dataItem.workNumber" placeholder="请输入内容" type="text" :onInput="_onInputWorkNumber" />
+          <TitleAndInput title="所属部门：" :value="dataItem.department" placeholder="请输入内容" type="text" :onInput="_onInputDepartment" />
+          <div class="setup_button">
+            <el-button @click="_onSubmit" type="primary">保 存</el-button>
           </div>
         </section>
       </main>
     </div>
 </template>
 <script>
+import { mapActions } from 'vuex'
+import { TitleAndInput } from './SubComponent'
 export default {
     data() {
         return {
-
+          dataItem: {
+            name: '',
+            sex: '',
+            date: '',
+            age: '',
+            workNumber: '',
+            department: ''
+          }
         }
+    },
+    components: {
+      TitleAndInput
+    },
+    methods: {
+      ...mapActions([
+        'saveUserInfo'
+      ]),
+      _onInputName (value) {
+        this.dataItem.name = value
+      },
+      _onInputSex (value) {
+        this.dataItem.sex = value
+      },
+      _onInputDate (value) {
+        this.dataItem.date = value
+      },
+      _onInputAge (value) {
+        this.dataItem.age = value
+      },
+      _onInputWorkNumber (value) {
+        this.dataItem.workNumber = value
+      },
+      _onInputDepartment (value) {
+        this.dataItem.department = value
+      },
+      _onSubmit () {
+        this.$confirm('确认保存此信息，保存后姓名、性别、出生日期、年龄不可更改, 是否继续?', '提示', {
+          confirmButtonText: '确定',
+          cancelButtonText: '取消',
+          type: 'warning'
+        }).then(() => {
+          this.saveUserInfo(this.dataItem)
+          this.$message({
+            type: 'success',
+            message: '保存成功!'
+          });
+        }).catch(() => {
+          this.$message({
+            type: 'info',
+            message: '已取消'
+          });
+        });
+      }
+    },
+    created() {
+      let oaDataItem = localStorage.getItem('oaDataItem')
+      if (oaDataItem) {
+        this.dataItem = JSON.parse(oaDataItem)
+      }
     }
 }
 </script>
@@ -65,8 +91,8 @@ export default {
       height: 100%;
       width: 100%;
       main {
-        width: 960px;
-        max-width: 1200px;
+        width: 720px;
+        max-width: 960px;
         margin: 60px auto;
         box-shadow: 0 1px 5px 0 hsla(0,0%,71%,.29);
         .nav {
@@ -74,6 +100,21 @@ export default {
           line-height: 60px;
           text-align: center;
           border-bottom: 1px solid #dbdbdb;
+        }
+        .content {
+          padding: 20px 0 30px 0;
+          box-sizing: border-box;
+          .setup_button {
+            text-align: center;
+            margin-top: 30px;
+            button {
+              width: 80px;
+              height: 36px;
+              line-height: 36px;
+              padding: 0;
+              margin: 0 auto;
+            }
+          }
         }
         section {
           > div {
