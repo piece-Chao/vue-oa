@@ -5,10 +5,10 @@
           <span>账户信息</span>
         </section>
         <section class="content">
-          <TitleAndInput title="姓名：" :value="dataItem.name" :disabled="dataItem.name ? true : false" placeholder="请输入内容" type="text" :onInput="_onInputName" />
-          <TitleAndInput title="性别：" :value="dataItem.sex" :disabled="dataItem.sex ? true : false" placeholder="请输入内容" type="text" :onInput="_onInputSex" />
-          <TitleAndInput title="出生日期：" :value="dataItem.date" :disabled="dataItem.date ? true : false" placeholder="请输入内容" type="text" :onInput="_onInputDate" />
-          <TitleAndInput title="年龄：" :value="dataItem.age" :disabled="dataItem.age ? true : false" placeholder="请输入内容" type="text" :onInput="_onInputAge" />
+          <TitleAndInput title="姓名：" :value="dataItem.name" :disabled="localStorageDate.name ? true : false" placeholder="请输入内容" type="text" :onInput="_onInputName" />
+          <TitleAndInput title="性别：" :value="dataItem.sex" :disabled="localStorageDate.sex ? true : false" placeholder="请输入内容" type="text" :onInput="_onInputSex" />
+          <TitleAndInput title="出生日期：" :value="dataItem.date" :disabled="localStorageDate.date ? true : false" placeholder="请输入内容" type="text" :onInput="_onInputDate" />
+          <TitleAndInput title="年龄：" :value="dataItem.age" :disabled="localStorageDate.age ? true : false" placeholder="请输入内容" type="text" :onInput="_onInputAge" />
           <TitleAndInput title="工号：" :value="dataItem.workNumber" placeholder="请输入内容" type="text" :onInput="_onInputWorkNumber" />
           <TitleAndInput title="所属部门：" :value="dataItem.department" placeholder="请输入内容" type="text" :onInput="_onInputDepartment" />
           <div class="setup_button">
@@ -31,7 +31,8 @@ export default {
             age: '',
             workNumber: '',
             department: ''
-          }
+          },
+          localStorageDate: ''
         }
     },
     components: {
@@ -70,6 +71,8 @@ export default {
             type: 'success',
             message: '保存成功!'
           });
+          // TODO
+          window.location.reload()
         }).catch(() => {
           this.$message({
             type: 'info',
@@ -82,6 +85,7 @@ export default {
       let oaDataItem = localStorage.getItem('oaDataItem')
       if (oaDataItem) {
         this.dataItem = JSON.parse(oaDataItem)
+        this.localStorageDate = JSON.parse(oaDataItem)
       }
     }
 }
