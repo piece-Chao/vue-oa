@@ -212,7 +212,8 @@ Mock.mock('http://mc.data/api-dev/notepad', {
         desc: '@ctitle',
         address: '@province@city@county',
         isContenteditable: false,
-        isSpellcheck: false
+        isSpellcheck: false,
+        disabled: true
       },
       {
         date: '@date',
@@ -220,7 +221,8 @@ Mock.mock('http://mc.data/api-dev/notepad', {
         desc: '@ctitle',
         address: '@province@city@county',
         isContenteditable: false,
-        isSpellcheck: false
+        isSpellcheck: false,
+        disabled: true
       },
       {
         date: '@date',
@@ -228,7 +230,8 @@ Mock.mock('http://mc.data/api-dev/notepad', {
         desc: '@ctitle',
         address: '@province@city@county',
         isContenteditable: false,
-        isSpellcheck: false
+        isSpellcheck: false,
+        disabled: true
       },
       {
         date: '@date',
@@ -236,7 +239,8 @@ Mock.mock('http://mc.data/api-dev/notepad', {
         desc: '@ctitle',
         address: '@province@city@county',
         isContenteditable: false,
-        isSpellcheck: false
+        isSpellcheck: false,
+        disabled: true
       },
       {
         date: '@date',
@@ -244,7 +248,8 @@ Mock.mock('http://mc.data/api-dev/notepad', {
         desc: '@ctitle',
         address: '@province@city@county',
         isContenteditable: false,
-        isSpellcheck: false
+        isSpellcheck: false,
+        disabled: true
       },
       {
         date: '@date',
@@ -252,7 +257,8 @@ Mock.mock('http://mc.data/api-dev/notepad', {
         desc: '@ctitle',
         address: '@province@city@county',
         isContenteditable: false,
-        isSpellcheck: false
+        isSpellcheck: false,
+        disabled: true
       }
     ]
   }
