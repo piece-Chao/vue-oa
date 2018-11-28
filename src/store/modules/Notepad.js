@@ -12,6 +12,14 @@ const mutations = {
 
   [types.DELETE_NOTE_PAD_DATA]: (state, payload) => {
     state.notepadList.splice(payload, 1)
+  },
+
+  [types.MODIFY_NOTE_PAD_DATA]: (state, payload) => {
+    state.notepadList[payload].disabled = false
+  },
+
+  [types.SAVE_NOTE_PAD_DATA]: (state, payload) => {
+    state.notepadList[payload].disabled = true
   }
 }
 

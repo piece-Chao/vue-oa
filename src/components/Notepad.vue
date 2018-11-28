@@ -7,21 +7,21 @@
       width="180">
       <template slot-scope="scope">
         <i class="el-icon-time"></i>
-        <span :contenteditable="scope.row.isContenteditable" :spellcheck="scope.row.isSpellcheck" style="margin-left: 10px">{{ scope.row.date }}</span>
+        <span style="margin-left: 10px">{{ scope.row.date }}</span>
       </template>
     </el-table-column>
     <el-table-column
       label="姓名"
       width="180">
       <template slot-scope="scope">
-        <el-tag :contenteditable="scope.row.isContenteditable" :spellcheck="scope.row.isSpellcheck" slot="reference" size="medium">{{ scope.row.name }}</el-tag>
+        <el-tag slot="reference" size="medium">{{ scope.row.name }}</el-tag>
       </template>
     </el-table-column>
     <el-table-column
       label="描述"
       width="280">
       <template slot-scope="scope">
-          <p :contenteditable="scope.row.isContenteditable" :spellcheck="scope.row.isSpellcheck">{{ scope.row.desc }}</p>
+          <el-input :value="scope.row.desc" :disabled="scope.row.disabled"></el-input>
       </template>
     </el-table-column>
     <el-table-column label="操作">
@@ -45,37 +45,7 @@
 import { mapMutations, mapActions, mapState } from 'vuex'
 export default {
   data () {
-    return {
-      tableData: [{
-        date: '2016-05-02',
-        name: '王小虎',
-        desc: 'asdasdasdassssssss',
-        address: '上海市普陀区金沙江路 1518 弄',
-        isContenteditable: false,
-        isSpellcheck: false
-      }, {
-        date: '2016-05-04',
-        name: '王小虎',
-        desc: 'asdasdasdassssssss',
-        address: '上海市普陀区金沙江路 1517 弄',
-        isContenteditable: false,
-        isSpellcheck: false
-      }, {
-        date: '2016-05-01',
-        name: '王小虎',
-        desc: 'asdasdasdassssssss',
-        address: '上海市普陀区金沙江路 1519 弄',
-        isContenteditable: false,
-        isSpellcheck: false
-      }, {
-        date: '2016-05-03',
-        name: '王小虎',
-        desc: 'asdasdasdassssssss',
-        address: '上海市普陀区金沙江路 1516 弄',
-        isContenteditable: false,
-        isSpellcheck: false
-      }]
-    }
+    return {}
   },
   computed: {
     ...mapState({
@@ -84,21 +54,21 @@ export default {
   },
   methods: {
     ...mapMutations([
-      'deleteNotePadData'
+      'deleteNotePadData',
+      'modifyNotePadData',
+      'saveNotePadData'
     ]),
     ...mapActions([
       'reqNotePadList'
     ]),
     handleEdit (index, row) {
-      row.isContenteditable = true
-      row.isSpellcheck = true
+      this.modifyNotePadData(index)
     },
     handleDelete (index, row) {
       this.deleteNotePadData(index)
     },
     handleDone (index, row) {
-      row.isContenteditable = false
-      row.isSpellcheck = false
+      this.saveNotePadData(index)
     }
   },
   created () {

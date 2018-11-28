@@ -21,7 +21,7 @@ export default {
       c: {}
     }
     console.log('Request URL:' + api, param)
-    let load = Loading.service({ spinner: 'responseImg', background: 'rgba(255, 255, 255, 0)', fullscreen: false })
+    let load = Loading.service({ spinner: 'responseImg', fullscreen: true })
     vue.$http(api, methods, JSON.stringify(params)).then(res => {
       console.log('Response URL: ' + api, res.data)
       let { data, msg, code } = res.data
