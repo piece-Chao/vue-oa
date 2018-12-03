@@ -22,72 +22,72 @@
 import { mapActions } from 'vuex'
 import { TitleAndInput } from './SubComponent'
 export default {
-    data() {
-        return {
-          dataItem: {
-            name: '',
-            sex: '',
-            date: '',
-            age: '',
-            workNumber: '',
-            department: ''
-          },
-          localStorageDate: ''
-        }
-    },
-    components: {
-      TitleAndInput
-    },
-    methods: {
-      ...mapActions([
-        'saveUserInfo'
-      ]),
-      _onInputName (value) {
-        this.dataItem.name = value
+  data () {
+    return {
+      dataItem: {
+        name: '',
+        sex: '',
+        date: '',
+        age: '',
+        workNumber: '',
+        department: ''
       },
-      _onInputSex (value) {
-        this.dataItem.sex = value
-      },
-      _onInputDate (value) {
-        this.dataItem.date = value
-      },
-      _onInputAge (value) {
-        this.dataItem.age = value
-      },
-      _onInputWorkNumber (value) {
-        this.dataItem.workNumber = value
-      },
-      _onInputDepartment (value) {
-        this.dataItem.department = value
-      },
-      _onSubmit () {
-        this.$confirm('确认保存此信息，保存后姓名、性别、出生日期、年龄不可更改, 是否继续?', '提示', {
-          confirmButtonText: '确定',
-          cancelButtonText: '取消',
-          type: 'warning'
-        }).then(() => {
-          this.saveUserInfo(this.dataItem)
-          this.$message({
-            type: 'success',
-            message: '保存成功!'
-          });
-          // TODO
-          window.location.reload()
-        }).catch(() => {
-          this.$message({
-            type: 'info',
-            message: '已取消'
-          });
-        });
-      }
-    },
-    created() {
-      let oaDataItem = localStorage.getItem('oaDataItem')
-      if (oaDataItem) {
-        this.dataItem = JSON.parse(oaDataItem)
-        this.localStorageDate = JSON.parse(oaDataItem)
-      }
+      localStorageDate: ''
     }
+  },
+  components: {
+    TitleAndInput
+  },
+  methods: {
+    ...mapActions([
+      'saveUserInfo'
+    ]),
+    _onInputName (value) {
+      this.dataItem.name = value
+    },
+    _onInputSex (value) {
+      this.dataItem.sex = value
+    },
+    _onInputDate (value) {
+      this.dataItem.date = value
+    },
+    _onInputAge (value) {
+      this.dataItem.age = value
+    },
+    _onInputWorkNumber (value) {
+      this.dataItem.workNumber = value
+    },
+    _onInputDepartment (value) {
+      this.dataItem.department = value
+    },
+    _onSubmit () {
+      this.$confirm('确认保存此信息，保存后姓名、性别、出生日期、年龄不可更改, 是否继续?', '提示', {
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        type: 'warning'
+      }).then(() => {
+        this.saveUserInfo(this.dataItem)
+        this.$message({
+          type: 'success',
+          message: '保存成功!'
+        })
+        // TODO
+        window.location.reload()
+      }).catch(() => {
+        this.$message({
+          type: 'info',
+          message: '已取消'
+        })
+      })
+    }
+  },
+  created () {
+    let oaDataItem = localStorage.getItem('oaDataItem')
+    if (oaDataItem) {
+      this.dataItem = JSON.parse(oaDataItem)
+      this.localStorageDate = JSON.parse(oaDataItem)
+    }
+  }
 }
 </script>
 <style lang="less" scoped>
@@ -142,5 +142,3 @@ export default {
       }
     }
 </style>
-
-
