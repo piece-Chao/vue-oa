@@ -20,3 +20,6 @@ export const SAVE_NOTE_PAD_DATA = 'saveNotePadData'
 // upload
 export const CHANGE_FILELIST = 'changeFileList'
 export const SUBMIT_UPLOAD = 'submitUpload'
+
+// community
+export const GET_TODAY_VIDEO_LIST = 'getTodayVideoList'
