@@ -7,6 +7,7 @@ export default {
     methods = 'GET',
     api = '',
     param = {},
+    other = false,
     onSuccess: successCb = res => {},
     onErr: errCb = err => {
       console.log(err)
@@ -24,6 +25,9 @@ export default {
     let load = Loading.service({ spinner: 'responseImg', fullscreen: true })
     vue.$http(api, methods, JSON.stringify(params)).then(res => {
       console.log('Response URL: ' + api, res.data)
+      if (other) {
+        successCb(res.data)
+      }
       let { data, msg, code } = res.data
       if (msg) {
         successCb(data)
