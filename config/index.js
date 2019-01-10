@@ -11,8 +11,8 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     // proxyTable: {
-    //   '/api': {
-    //     target: 'http://mc.data',
+    //   '/tvp': {
+    //     target: 'http://www.tudou.com',
     //     changeOrigin: true
     //   }
     // },

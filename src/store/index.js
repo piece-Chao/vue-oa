@@ -11,7 +11,8 @@ import WaterFall from './modules/WaterFall'
 import Notepad from './modules/Notepad'
 import Upload from './modules/Upload'
 import UserSetUp from './modules/UserSetUp'
-import Community from './modules/Community'
+import TodayVideo from './modules/TodayVideo'
+import TodayNews from './modules/TodayNews'
 
 Vue.use(Vuex)
 
@@ -31,7 +32,8 @@ export default new Vuex.Store({
     Notepad,
     Upload,
     UserSetUp,
-    Community
+    TodayVideo,
+    TodayNews
   },
   plugins: process.env.NODE_ENV !== 'production' ? [logger] : []
 })

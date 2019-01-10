@@ -41,8 +41,8 @@
           <el-submenu index="3">
             <template slot="title"><i class="el-icon-setting"></i>导航三</template>
             <router-link to="/Upload"><el-menu-item index="3-1">文件上传预览</el-menu-item></router-link>
-            <router-link to="/Edit"><el-menu-item index="3-2">富文本编译器</el-menu-item></router-link>
-            <router-link to="/Community"><el-menu-item index="3-3">社区今日精选</el-menu-item></router-link>
+            <router-link to="/TodayNews"><el-menu-item index="3-2">今日新闻精选</el-menu-item></router-link>
+            <router-link to="/TodayVideo"><el-menu-item index="3-3">今日视频精选</el-menu-item></router-link>
             <el-submenu index="3-4">
               <template slot="title">选项4</template>
               <el-menu-item index="3-4-1">选项4-1</el-menu-item>
