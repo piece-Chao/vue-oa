@@ -10,13 +10,13 @@
 <script>
 import { mapState, mapActions } from 'vuex'
 export default {
-  name: 'Community',
+  name: 'reqTodayVideoList',
   data() {
     return {}
   },
   computed: {
     ...mapState({
-      todayVideoList: state => state.Community.todayVideoList
+      todayVideoList: state => state.TodayVideo.todayVideoList
     })
   },
   methods: {

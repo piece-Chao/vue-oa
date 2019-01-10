@@ -9,8 +9,8 @@ import Waterfall from '@/components/Waterfall'
 import Notepad from '@/components/Notepad'
 import Upload from '@/components/Upload'
 import UserSetUp from '@/components/UserSetUp'
-import Edit from '@/components/Edit'
-import Community from '@/components/Community'
+import TodayNews from '@/components/TodayNews'
+import TodayVideo from '@/components/TodayVideo'
 
 Vue.use(Router)
 
@@ -63,14 +63,14 @@ export default new Router({
           component: UserSetUp
         },
         {
-          path: '/Edit',
-          name: 'Edit',
-          component: Edit
+          path: '/TodayNews',
+          name: 'TodayNews',
+          component: TodayNews
         },
         {
-          path: '/Community',
-          name: 'Community',
-          component: Community
+          path: '/TodayVideo',
+          name: 'TodayVideo',
+          component: TodayVideo
         }
       ]
     }

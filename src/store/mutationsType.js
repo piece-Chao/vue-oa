@@ -21,5 +21,8 @@ export const SAVE_NOTE_PAD_DATA = 'saveNotePadData'
 export const CHANGE_FILELIST = 'changeFileList'
 export const SUBMIT_UPLOAD = 'submitUpload'
 
-// community
+// todayVideo
 export const GET_TODAY_VIDEO_LIST = 'getTodayVideoList'
+
+// todayNews
+export const GET_TODAY_NEWS_LIST = 'getTodayNewsList'

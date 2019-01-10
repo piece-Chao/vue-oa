@@ -7,6 +7,7 @@ const state = {
 
 const mutations = {
   [types.GET_TODAY_VIDEO_LIST]: (state, payload) => {
+    console.log(payload)
     state.todayVideoList = payload
   }
 }

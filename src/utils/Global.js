@@ -8,8 +8,8 @@ Global.router = new Map([
   ['Notepad', '记事本'],
   ['Upload', '文件上传预览'],
   ['UserSetUp', '个人中心'],
-  ['Edit', '富文本编译器'],
-  ['Community', '今日社区精选']
+  ['TodayNews', '今日新闻精选'],
+  ['TodayVideo', '今日视频精选']
 ])
 
 export default Global
