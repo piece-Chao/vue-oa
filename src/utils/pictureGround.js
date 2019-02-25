@@ -1,3 +1,4 @@
+/* eslint-disable */
 !function (a, b) {
   'use strict'
   function c (a) {

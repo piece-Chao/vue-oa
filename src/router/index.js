@@ -1,16 +1,27 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from '@/components/Home'
-import Banner from '@/components/Banner'
-import Table from '@/components/Table'
-import Chars from '@/components/Chars'
-import Login from '@/components/Login'
-import Waterfall from '@/components/Waterfall'
-import Notepad from '@/components/Notepad'
-import Upload from '@/components/Upload'
-import UserSetUp from '@/components/UserSetUp'
-import TodayNews from '@/components/TodayNews'
-import TodayVideo from '@/components/TodayVideo'
+const Home = () => import('@/components/Home')
+const Banner = () => import('@/components/Banner')
+const Table = () => import('@/components/Table')
+const Chars = () => import('@/components/Chars')
+const Login = () => import('@/components/Login')
+const Waterfall = () => import('@/components/Waterfall')
+const Notepad = () => import('@/components/Notepad')
+const Upload = () => import('@/components/Upload')
+const UserSetUp = () => import('@/components/UserSetUp')
+const TodayNews = () => import('@/components/TodayNews')
+const TodayVideo = () => import('@/components/TodayVideo')
+// import Home from '@/components/Home'
+// import Banner from '@/components/Banner'
+// import Table from '@/components/Table'
+// import Chars from '@/components/Chars'
+// import Login from '@/components/Login'
+// import Waterfall from '@/components/Waterfall'
+// import Notepad from '@/components/Notepad'
+// import Upload from '@/components/Upload'
+// import UserSetUp from '@/components/UserSetUp'
+// import TodayNews from '@/components/TodayNews'
+// import TodayVideo from '@/components/TodayVideo'
 
 Vue.use(Router)
 
