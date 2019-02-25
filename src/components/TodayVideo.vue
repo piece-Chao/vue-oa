@@ -11,7 +11,7 @@
 import { mapState, mapActions } from 'vuex'
 export default {
   name: 'reqTodayVideoList',
-  data() {
+  data () {
     return {}
   },
   computed: {
@@ -24,7 +24,7 @@ export default {
       'reqTodayVideoList'
     ])
   },
-  created() {
+  created () {
     this.reqTodayVideoList()
   }
 }
@@ -58,4 +58,3 @@ export default {
     }
   }
 </style>
-

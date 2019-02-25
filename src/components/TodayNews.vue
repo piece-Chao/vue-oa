@@ -23,7 +23,7 @@
 import { mapActions, mapState } from 'vuex'
 export default {
   name: 'TodayNews',
-  data() {
+  data () {
     return {
 
     }
@@ -37,11 +37,9 @@ export default {
     ...mapActions([
       'reqTodayNewsList'
     ]),
-    getContent() {
-
-    }
+    getContent () {}
   },
-  created() {
+  created () {
     this.reqTodayNewsList()
   }
 }
@@ -111,5 +109,3 @@ export default {
     }
   }
 </style>
-
-
