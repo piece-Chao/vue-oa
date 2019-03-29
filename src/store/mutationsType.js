@@ -26,3 +26,7 @@ export const GET_TODAY_VIDEO_LIST = 'getTodayVideoList'
 
 // todayNews
 export const GET_TODAY_NEWS_LIST = 'getTodayNewsList'
+
+// weather
+export const GET_WEATHER_MES = 'getWeatherMes'
+export const TOGGLE_WEATHER = 'toggleWeather'

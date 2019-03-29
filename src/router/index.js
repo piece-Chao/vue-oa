@@ -11,17 +11,6 @@ const Upload = () => import('@/components/Upload')
 const UserSetUp = () => import('@/components/UserSetUp')
 const TodayNews = () => import('@/components/TodayNews')
 const TodayVideo = () => import('@/components/TodayVideo')
-// import Home from '@/components/Home'
-// import Banner from '@/components/Banner'
-// import Table from '@/components/Table'
-// import Chars from '@/components/Chars'
-// import Login from '@/components/Login'
-// import Waterfall from '@/components/Waterfall'
-// import Notepad from '@/components/Notepad'
-// import Upload from '@/components/Upload'
-// import UserSetUp from '@/components/UserSetUp'
-// import TodayNews from '@/components/TodayNews'
-// import TodayVideo from '@/components/TodayVideo'
 
 Vue.use(Router)
 

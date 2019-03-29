@@ -13,6 +13,7 @@ import Upload from './modules/Upload'
 import UserSetUp from './modules/UserSetUp'
 import TodayVideo from './modules/TodayVideo'
 import TodayNews from './modules/TodayNews'
+import Weather from './modules/Weather'
 
 Vue.use(Vuex)
 
@@ -33,7 +34,8 @@ export default new Vuex.Store({
     Upload,
     UserSetUp,
     TodayVideo,
-    TodayNews
+    TodayNews,
+    Weather
   },
   plugins: process.env.NODE_ENV !== 'production' ? [logger] : []
 })

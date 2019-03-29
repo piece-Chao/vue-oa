@@ -24,7 +24,10 @@
         </el-col>
       </el-row>
     </div>
-    <el-container style="height: 100%; padding: 0 0 80px 0; box-sizing: border-box">
+    <div class="weather" @click="toggleWeather(true)">
+      当前城市：{{weatherMes.city}} <img :src="Global.weather.get(todayWeather.type)" :alt="todayWeather.type">
+    </div>
+    <el-container style="height: 100%; margin-top: 80px;">
       <el-aside style="height: 100%; width: 240px; overflow-x: hidden; overflow-y: auto; border-right: 1px solid #e6e6e6;">
         <el-menu text-color="#333" active-text-color="#58a8f5" :default-openeds="['1', '2', '3']">
           <el-submenu index="1">
@@ -56,6 +59,9 @@
         </transition>
       </el-container>
     </el-container>
+    <div v-if="showWeather" class="mask">
+      <Weather />
+    </div>
   </div>
 </template>
 
@@ -63,15 +69,22 @@
 import router from '../router/index'
 import Global from '../utils/Global'
 import packageJson from '../../package'
+import { mapActions, mapState, mapMutations } from 'vuex'
+import Weather from './Weather'
+
 export default {
   name: 'Home',
+  components: {
+    Weather
+  },
   data () {
     return {
       breadcrumbList: [{
         path: '/Home',
         name: '首页'
       }],
-      packageJson
+      packageJson,
+      Global
     }
   },
   watch: {
@@ -80,7 +93,20 @@ export default {
       this.toPath({path: item.path, name: Global.router.get(item.name)})
     }
   },
+  computed: {
+    ...mapState({
+      weatherMes: state => state.Weather.weatherMes,
+      todayWeather: state => state.Weather.todayWeather,
+      showWeather: state => state.Weather.showWeather
+    })
+  },
   methods: {
+    ...mapActions([
+      'reqWeatherMes'
+    ]),
+    ...mapMutations([
+      'toggleWeather'
+    ]),
     handleCommand (command) {
       if (command === 'exit') {
         router.push({ name: 'Login' })
@@ -90,10 +116,14 @@ export default {
       if (item) {
         this.breadcrumbList.splice(1, 1, item)
       }
+    },
+    changeShowWeather () {
+      this.showWeather = true
     }
   },
   created () {
     let pathname = window.location.hash
+    this.reqWeatherMes('北京')
     if (pathname !== '#/Home') {
       this.breadcrumbList.push({
         path: pathname.split('/')[1],
@@ -124,7 +154,6 @@ export default {
         float: left;
         line-height: 20px;
         margin: 28px 0 0 150px;
-
       }
       .logo {
         color: #fff;
@@ -135,7 +164,7 @@ export default {
       }
     }
     .content_container {
-      margin-top: 0;
+      margin-top: 50px;
       padding: 0 50px;
       overflow-x: hidden;
       overflow-y: auto;
@@ -145,6 +174,20 @@ export default {
       img {
         height: 100%;
         width: 100%;
+      }
+    }
+    .weather {
+      position: absolute;
+      top: 84px;
+      right: 30px;
+      line-height: 40px;
+      color: #67b0ff;
+      cursor: pointer;
+      img {
+        height: 20px;
+        width: 20px;
+        vertical-align: middle;
+        background-color: rgba(0, 0, 0, 0.3);
       }
     }
   }
@@ -198,5 +241,14 @@ export default {
       color: #ffffff;
       margin-left: 10px;
     }
+  }
+  .mask {
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: rgba(0, 0, 0, 0.3);
+      z-index: 999;
   }
 </style>

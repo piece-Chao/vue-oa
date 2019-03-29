@@ -9,7 +9,7 @@
       </el-carousel>
     </el-container>
     <div class="banner_card">
-      <div @click="getLocation()">
+      <div>
         <i class="icon iconfont">&#xe600;</i>
         <p>
           <section>location</section>
@@ -47,6 +47,11 @@ export default {
   name: 'Banner',
   data () {
     return {
+      options: {
+        enableHighAccuracy: true,
+        timeout: 5000,
+        maximumAge: 0
+      }
     }
   },
   computed: {
@@ -59,15 +64,6 @@ export default {
     ...mapActions([
       'getImageData'
     ]),
-    getLocation () {
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition((position) => {
-          this.$alert(`您当前位置为: 经度：${position.coords.longitude}，纬度${position.coords.latitude}`, '提示', {})
-        })
-      } else {
-        this.$alert(`您的浏览器位置服务不可用`, '提示', {})
-      }
-    },
     sendEmail () {
       window.location = 'mailto: maitcast@163.com'
     },
@@ -127,6 +123,7 @@ export default {
         padding: 20px;
         box-sizing: border-box;
         display: flex;
+        cursor: pointer;
         i {
           flex: 0.3;
           color: #ffffff;
