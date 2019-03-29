@@ -46,12 +46,14 @@ export default {
     .changeTypes {
       margin-bottom: 50px;
       cursor: pointer;
-      padding: 10px;
       border: 1px solid #3ca4ff;
       border-radius: 4px;
-      width: 80px;
+      width: 90px;
       text-align: center;
       color: #3ca4ff;
+      height: 36px;
+      line-height: 38px;
+      box-sizing: border-box;
     }
   }
 </style>
