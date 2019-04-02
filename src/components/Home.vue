@@ -29,7 +29,7 @@
     </div>
     <el-container style="height: 100%; margin-top: 80px;">
       <el-aside style="height: 100%; width: 240px; overflow-x: hidden; overflow-y: auto; border-right: 1px solid #e6e6e6;">
-        <el-menu text-color="#333" active-text-color="#58a8f5" :default-openeds="['1', '2', '3']">
+        <el-menu text-color="#333" active-text-color="#58a8f5" :default-openeds="['1', '2', '3', '4']">
           <el-submenu index="1">
             <template slot="title"><i class="el-icon-message"></i>导航一</template>
               <router-link to="/Banner"><el-menu-item index="1-1">轮播图</el-menu-item></router-link>
@@ -46,10 +46,10 @@
             <router-link to="/Upload"><el-menu-item index="3-1">文件上传预览</el-menu-item></router-link>
             <router-link to="/TodayNews"><el-menu-item index="3-2">今日新闻精选</el-menu-item></router-link>
             <router-link to="/TodayVideo"><el-menu-item index="3-3">今日视频精选</el-menu-item></router-link>
-            <el-submenu index="3-4">
-              <template slot="title">选项4</template>
-              <el-menu-item index="3-4-1">选项4-1</el-menu-item>
-            </el-submenu>
+          </el-submenu>
+          <el-submenu index="4">
+            <template slot="title"><i class="el-icon-printer"></i>导航四</template>
+            <router-link to="/ToolsComponent"><el-menu-item index="4-1">工具</el-menu-item></router-link>
           </el-submenu>
         </el-menu>
       </el-aside>

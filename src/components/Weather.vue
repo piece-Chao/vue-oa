@@ -42,6 +42,7 @@
             </el-table-column>
           </el-table>
         </div>
+        <p class="tips">提示：{{weatherMes.ganmao}}</p>
       </div>
     </div>
 </template>
@@ -84,6 +85,7 @@ export default {
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 6px;
+  color: #666;
   .main {
     height: 100%;
     width: 100%;
@@ -109,6 +111,9 @@ export default {
     span {
       cursor: pointer;
     }
+  }
+  .tips {
+    margin-top: 16px;
   }
 }
 </style>

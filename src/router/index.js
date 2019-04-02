@@ -11,6 +11,7 @@ const Upload = () => import('@/components/Upload')
 const UserSetUp = () => import('@/components/UserSetUp')
 const TodayNews = () => import('@/components/TodayNews')
 const TodayVideo = () => import('@/components/TodayVideo')
+const ToolsComponent = () => import('@/components/ToolsComponent')
 
 Vue.use(Router)
 
@@ -71,6 +72,11 @@ export default new Router({
           path: '/TodayVideo',
           name: 'TodayVideo',
           component: TodayVideo
+        },
+        {
+          path: '/ToolsComponent',
+          name: 'ToolsComponent',
+          component: ToolsComponent
         }
       ]
     }
