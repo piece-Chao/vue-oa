@@ -2,16 +2,16 @@
   <div class="ToolsComponent">
     <section>
       <p class="title">二维码生成器</p>
-      <el-input size="small" class="codeInput" @change="onInputcodeValue" placeholder="请输入内容"></el-input>
+      <el-input size="small" v-model="codeValue" class="codeInput" @change="onInputcodeValue" placeholder="请输入内容"></el-input>
       <el-button size="small" @click="qrcode">生成</el-button>
       <div ref="_qrcode" class="_qrcode" id="qrcode"></div>
     </section>
     <section>
       <p class="title">Base64</p>
-      <el-input size="small" class="codeInput" @change="onInputEncodeValue" placeholder="请输入内容"></el-input>
+      <el-input size="small" v-model="EncodeValue" class="codeInput" @change="onInputEncodeValue" placeholder="请输入内容"></el-input>
       <el-button size="small" @click="Encode">加密</el-button>
       <p class="title">{{EncodeValue}}</p>
-      <el-input size="small" class="codeInput" @change="onInputDecodeValue" placeholder="请输入内容"></el-input>
+      <el-input size="small" v-model="DecodeValue" class="codeInput" @change="onInputDecodeValue" placeholder="请输入内容"></el-input>
       <el-button size="small" @click="Decode">解密</el-button>
       <p class="title">{{DecodeValue}}</p>
     </section>
